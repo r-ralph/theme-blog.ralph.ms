@@ -17,10 +17,6 @@
           <span class="more-meta"> {{ T "wordCount" .WordCount }} </span>
           <span class="more-meta"> {{ T "readingTime" .ReadingTime }} </span>
         {{- end }}
-        {{ if and .Site.Params.busuanzi.enable .Site.Params.busuanzi.pagePV -}}
-          {{ $valueSpan := printf `<span id="busuanzi_value_page_pv"><img src="%s" alt="spinner.svg"/></span>` ("img/spinner.svg" | relURL) -}}
-          <span id="busuanzi_container_page_pv" class="more-meta"> {{ printf (T "pagePV") $valueSpan | safeHTML }} </span>
-        {{- end }}
       </div>
     </header>
 

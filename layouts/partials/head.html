@@ -55,11 +55,6 @@
 <script>eruda.init();</script>
 {{- end -}}
 
-<!-- busuanzi -->
-{{- if .Site.Params.busuanzi.enable -}}
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-{{- end -}}
-
 <!-- Styles -->
 {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
 <link href="{{ $style.RelPermalink }}" rel="stylesheet">
