@@ -18,9 +18,6 @@ postMetaInFooter: false
 hiddenFromHomePage: false
 # You can also define another contentCopyright. e.g. contentCopyright: "This is another copyright."
 contentCopyright: false
-mathjax: false
-mathjaxEnableSingleDollar: false
-mathjaxEnableAutoNumber: false
 
 # You unlisted posts you might want not want the header or footer to show
 hideHeaderAndFooter: false
