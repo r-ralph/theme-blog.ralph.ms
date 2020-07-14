@@ -29,10 +29,6 @@ hideHeaderAndFooter: false
 # Comment this out to use the global config.
 #enableOutdatedInfoWarning: false
 
-flowchartDiagrams:
-  enable: false
-  options: ""
-
 sequenceDiagrams: 
   enable: false
   options: ""

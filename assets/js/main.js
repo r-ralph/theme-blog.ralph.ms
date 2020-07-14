@@ -6,7 +6,6 @@ $(document).ready(function () {
 });
 
 Even.responsiveTable();
-Even.flowchart();
 Even.sequence();
 
 if (window.hljs) {
