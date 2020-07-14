@@ -26,7 +26,6 @@
     .logo {
       font-size: 22px;
       line-height: $mobile-navbar-height;
-      font-family: $logo-font-family;
     }
   }
 
@@ -61,7 +60,6 @@
 
     a {
       font-size: 18px;
-      font-family: $global-serif-font-family;
 
       &:hover {
         color: $theme-color;

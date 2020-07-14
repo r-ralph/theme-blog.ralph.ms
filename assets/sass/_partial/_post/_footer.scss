@@ -5,7 +5,6 @@
 .post-footer {
   margin-top: $post-footer-margin-top;
   border-top: $post-footer-border-top;
-  font-family: $global-serif-font-family;
 
   .post-tags {
     padding: $post-tags-padding;
@@ -29,7 +28,6 @@
     .next {
       font-weight: 600;
       font-size: $post-nav-font-size;
-      font-family: $global-serif-font-family;
       transition-property: transform;
       transition-timing-function: ease-out;
       transition-duration: 0.3s;

@@ -60,7 +60,6 @@ a {
 @each $header, $size in $global-headings {
   #{$header} {
     font-size: $size;
-    font-family: $global-serif-font-family;
   }
 }
 
