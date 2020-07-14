@@ -6,7 +6,6 @@ $(document).ready(function () {
 });
 
 Even.responsiveTable();
-Even.sequence();
 
 if (window.hljs) {
   hljs.initHighlighting();

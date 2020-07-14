@@ -218,31 +218,6 @@ Even._linkToc = function() {
   }
 };
 
-Even.sequence = function() {
-  if (!window.Diagram) return;
-
-  const blocks = document.querySelectorAll('pre code.language-sequence');
-  for (let i = 0; i < blocks.length; i++) {
-    if (!window.hljs && i % 2 === 0) continue;
-
-    const block = blocks[i];
-    const rootElement = window.hljs
-        ? block.parentElement
-        : block.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
-
-    const container = document.createElement('div');
-    const id = `js-sequence-diagrams-${i}`;
-    container.id = id;
-    container.className = 'align-center';
-    rootElement.parentElement.replaceChild(container, rootElement);
-
-    const diagram = Diagram.parse(block.childNodes[0].nodeValue);
-    diagram.drawSVG(id, window.sequenceDiagramsOptions
-        ? window.sequenceDiagramsOptions
-        : {theme: 'simple'});
-  }
-};
-
 Even.responsiveTable = function() {
   const tables = document.querySelectorAll('.post-content table:not(.lntable)');
   for (let i = 0; i < tables.length; i++) {
