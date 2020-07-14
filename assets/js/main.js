@@ -6,11 +6,4 @@ $(document).ready(function () {
 });
 
 Even.responsiveTable();
-
-if (window.hljs) {
-  hljs.initHighlighting();
-  Even.highlight();
-} else {
-  Even.chroma();
-}
-
+Even.chroma();
