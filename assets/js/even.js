@@ -2,20 +2,49 @@
 
 const Even = {};
 
-Even.backToTop = function() {
-  const $backToTop = $('#back-to-top');
+Even.backToTop = function () {
+    const backToTop = document.getElementById('back-to-top');
+    backToTop.style.opacity = "0"
+    let isAnimating = false;
+    let visibleBackToTopNow = false;
 
-  $(window).scroll(function() {
-    if ($(window).scrollTop() > 100) {
-      $backToTop.fadeIn(1000);
-    } else {
-      $backToTop.fadeOut(1000);
+    function fade(isFadeIn) {
+        visibleBackToTopNow = isFadeIn;
+        if (isAnimating) {
+            return;
+        }
+        const targetOpacity = isFadeIn ? '1' : '0';
+        const originalOpacity = isFadeIn ? '0' : '1';
+        if (backToTop.style.opacity !== targetOpacity) {
+            isAnimating = true;
+            backToTop.style.opacity = originalOpacity;
+            backToTop.style.transition = 'opacity 1000ms';
+            backToTop.style.display = 'block';
+            setTimeout(function () {
+                backToTop.style.opacity = targetOpacity;
+            }, 1);
+            setTimeout(function () {
+                backToTop.style.display = isFadeIn ? 'block' : 'none';
+                backToTop.style.transition = '';
+                isAnimating = false;
+                if (visibleBackToTopNow !== isFadeIn) {
+                    fade(visibleBackToTopNow);
+                }
+            }, 1010);
+        }
     }
-  });
 
-  $backToTop.click(function() {
-    $('body,html').animate({scrollTop: 0});
-  });
+    window.addEventListener('scroll', function () {
+        if (document.scrollingElement.scrollTop > 100) {
+            fade(true);
+        } else {
+            fade(false);
+        }
+    });
+
+    backToTop.addEventListener('click', function () {
+        document.body.scrollIntoView({behavior: 'smooth'});
+    })
 };
 
 Even.mobileNavbar = function() {
