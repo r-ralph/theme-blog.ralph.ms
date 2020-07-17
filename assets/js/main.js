@@ -1,6 +1,6 @@
-$(document).ready(function () {
-  Even.backToTop();
-  Even.mobileNavbar();
+document.addEventListener('DOMContentLoaded', function () {
+    Even.backToTop();
+    Even.mobileNavbar();
 });
 
 Even.responsiveTable();
