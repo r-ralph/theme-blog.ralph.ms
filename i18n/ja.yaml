@@ -61,10 +61,16 @@ readingTime:
   other: "読了時間: {{ .Count }} 分"
 
 outdatedInfoWarningBefore:
-  other: "【注意】最後更新日は "
+  other: "この記事は公開から"
 
 outdatedInfoWarningAfter:
-  other: "のため、記事の内容が古い可能性があります。"
+  other: "以上経過しているため、情報が古い可能性があります。"
+
+outdatedInfoHalfYear:
+  other: "半年"
+
+outdatedInfoOneYear:
+  other: "1年"
 
 # ===== content license =====
 author:
