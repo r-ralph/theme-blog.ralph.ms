@@ -85,9 +85,7 @@ a {
   }
 }
 
-.content-wrapper {
-  padding: $global-container-padding;
-}
+@include responsive(".content-wrapper", $main-container-padding-responsive)
 
 // make video fluid:
 // https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php

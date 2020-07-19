@@ -21,3 +21,25 @@
      @content;
    }
 }
+
+@mixin put-all($selector, $data) {
+  #{$selector} {
+    @each $property-name, $value in $data {
+      #{$property-name}: $value;
+    }
+  }
+}
+
+@mixin responsive($selector, $data-set) {
+  @each $size-key, $width-threshold in $sizes {
+    @if map-has-key($data-set, #{$size-key}) {
+      @if $width-threshold == null { // no media query
+        @include put-all($selector, map-get($data-set, $size-key))
+      } @else {
+        @include max-screen($width-threshold) {
+          @include put-all($selector, map-get($data-set, $size-key))
+        }
+      }
+    }
+  }
+}

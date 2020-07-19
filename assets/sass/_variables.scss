@@ -37,6 +37,12 @@ $light-gray: #e6e6e6 !default;
 $gray: #cacaca !default;
 $dark-gray: #8a8a8a !default;
 
+$sizes: (
+  "default": null,
+  "md": 991px,
+  "xs": 575px
+) !default;
+
 
 // ========== Global ========== //
 // Text color of the body.
@@ -49,7 +55,19 @@ $global-font-size: 16px !default;
 $global-body-width: 800px !default;
 
 // Padding of container main
-$global-container-padding: 0 20px !default;
+$main-container-padding-responsive: (
+  "default": (
+    padding: 0 64px
+  ),
+  "md": (
+    padding-left: 24px,
+    padding-right: 24px
+  ),
+  "xs": (
+    padding-left: 16px,
+    padding-right: 16px
+  )
+) !default;
 
 // Default line height for all type. `$global-lineheight` is 24px while `$global-font-size` is 16px.
 $global-lineheight: 1.5 !default;
