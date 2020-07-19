@@ -49,8 +49,8 @@
 <link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | relURL }}" color="#5bbad5">
 
 <!-- Styles -->
-{{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
-<link href="{{ $style.RelPermalink }}" rel="stylesheet">
+{{ $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS | minify | fingerprint }}
+<link href="{{ $style.RelPermalink }}" integrity=”{{ $style.Data.Integrity }}”  rel="stylesheet">
 
 <!-- custom css -->
 {{ range .Site.Params.customCSS -}}

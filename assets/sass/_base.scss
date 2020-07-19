@@ -14,9 +14,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: $global-lineheight;
   color: $global-font-color;
-  background: $global-background;
   scroll-behavior: smooth;
   border-top: 3px solid $theme-color;
+  @if ($global-background-image-path != "") {
+    background: $white url($global-background-image-path);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    @media screen and (min-width: $global-background-image-width) {
+      background-size: cover;
+    }
+  } @else {
+    background: $global-background;
+  }
 }
 
 @include max-screen() {

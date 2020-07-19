@@ -1,3 +1,7 @@
+// Variables from hugo processor
+$global-background-image-path: "{{ if .Site.Params.backgroundImage }}{{ .Site.Params.backgroundImage.path | absURL }}{{ end }}";
+$global-background-image-width: "{{ if .Site.Params.backgroundImage }}{{ .Site.Params.backgroundImage.width }}{{ end }}";
+
 @import "_custom/custom";
 @import "_variables";
 
