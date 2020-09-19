@@ -15,7 +15,7 @@
 </head>
 <body>
   {{ partial "slideout.html" . }}
-  <div class="container" id="mobile-panel">
+  <div class="page-root" id="mobile-panel">
     {{ if not .Params.hideHeaderAndFooter -}}
     <header id="header" class="header">
         {{ partial "header.html" . }}

@@ -73,13 +73,13 @@ a {
   }
 }
 
-.container {
+.page-root {
   margin: 0 auto;
   width: $global-body-width;
 }
 
 @include max-screen() {
-  .container {
+  .page-root {
     width: 100%;
     box-shadow: -1px -5px 5px $gray;
   }
