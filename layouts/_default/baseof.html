@@ -16,11 +16,9 @@
 <body>
   {{ partial "slideout.html" . }}
   <div class="page-root" id="mobile-panel">
-    {{ if not .Params.hideHeaderAndFooter -}}
     <header id="header" class="header">
         {{ partial "header.html" . }}
     </header>
-    {{- end }}
     <div id="container">
       <main id="main" class="main">
         <div class="content-wrapper">
@@ -32,11 +30,9 @@
       {{ partial "sidebar.html" . }}
     </div>
 
-    {{ if not .Params.hideHeaderAndFooter -}}
     <footer id="footer" class="footer">
       {{ partial "footer.html" . }}
     </footer>
-    {{- end }}
 
     <div class="back-to-top" id="back-to-top">
       <i class="iconfont icon-up"></i>
