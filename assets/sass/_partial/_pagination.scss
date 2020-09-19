@@ -4,6 +4,7 @@
 
 .pagination {
   padding: 2em 20px;
+  background: $white;
   @include clearfix;
 
   .prev,

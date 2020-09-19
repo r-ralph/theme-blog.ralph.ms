@@ -4,15 +4,13 @@
 
 .posts {
   margin-bottom: $post-list-margin-bottom;
-  border-bottom: $post-border;
 }
 
 .post {
   padding: 45px 20px;
-
-  & + .post {
-    border-top: $post-border;
-  }
+  margin-bottom: 25px;
+  border: 1px solid #ddd;
+  background-color: $white;
 
   @import '_post/header';
   @import '_post/toc';
