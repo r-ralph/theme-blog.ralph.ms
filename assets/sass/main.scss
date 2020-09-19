@@ -1,4 +1,5 @@
 // Variables from hugo processor
+$theme-color-config: "{{ if .Site.Params.colorTheme }}{{ .Site.Params.colorTheme }}{{ end }}";
 $global-background-image-path: "{{ if .Site.Params.backgroundImage }}{{ .Site.Params.backgroundImage.path | absURL }}{{ end }}";
 $global-background-image-width: "{{ if .Site.Params.backgroundImage }}{{ .Site.Params.backgroundImage.width }}{{ end }}";
 
