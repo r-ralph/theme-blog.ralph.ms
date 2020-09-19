@@ -15,7 +15,6 @@ body {
   line-height: $global-lineheight;
   color: $global-font-color;
   scroll-behavior: smooth;
-  border-top: 3px solid $theme-color;
   @if ($global-background-image-path != "") {
     background: url($global-background-image-path) no-repeat fixed center center;
     @media screen and (min-width: $global-background-image-width) {
@@ -23,12 +22,6 @@ body {
     }
   } @else {
     background: $global-background;
-  }
-}
-
-@include max-screen() {
-  body {
-    border-top: 0;
   }
 }
 
@@ -62,6 +55,9 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+  body {
+    border-top: 3px solid $theme-color;
+  }
   #container {
     max-width: 720px;
   }
