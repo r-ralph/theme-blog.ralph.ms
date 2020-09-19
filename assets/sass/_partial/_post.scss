@@ -2,13 +2,12 @@
 // Post
 // ==============================
 
-.posts {
-  margin-bottom: $post-list-margin-bottom;
+.posts, .post {
+  margin-bottom: 25px;
 }
 
 .post {
   padding: 45px 20px;
-  margin-bottom: 25px;
   border: 1px solid #ddd;
   background-color: $white;
 
