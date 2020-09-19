@@ -11,6 +11,7 @@ $global-background-image-width: "{{ if .Site.Params.backgroundImage }}{{ .Site.P
 @import "_base";
 @import "_iconfont";
 @import "_partial/header";
+@import "_partial/sidebar";
 @import "_partial/post";
 @import "_partial/pagination";
 @import "_partial/footer";

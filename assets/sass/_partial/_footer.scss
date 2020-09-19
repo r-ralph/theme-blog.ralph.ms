@@ -4,6 +4,7 @@
 
 .footer {
   margin-top: $footer-margin-top;
+  background-color: $white;
 
   @import "_footer/social";
   @import "_footer/copyright";

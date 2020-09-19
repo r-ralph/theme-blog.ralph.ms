@@ -37,13 +37,6 @@ $light-gray: #e6e6e6 !default;
 $gray: #cacaca !default;
 $dark-gray: #8a8a8a !default;
 
-$sizes: (
-  "default": null,
-  "md": 991px,
-  "xs": 575px
-) !default;
-
-
 // ========== Global ========== //
 // Text color of the body.
 $global-font-color: #34495e !default;
@@ -52,22 +45,7 @@ $global-font-color: #34495e !default;
 $global-font-size: 16px !default;
 
 // Global width of '<body>'.
-$global-body-width: 800px !default;
-
-// Padding of container main
-$main-container-padding-responsive: (
-  "default": (
-    padding: 0 64px
-  ),
-  "md": (
-    padding-left: 24px,
-    padding-right: 24px
-  ),
-  "xs": (
-    padding-left: 16px,
-    padding-right: 16px
-  )
-) !default;
+$global-body-width: 767px !default;
 
 // Default line height for all type. `$global-lineheight` is 24px while `$global-font-size` is 16px.
 $global-lineheight: 1.5 !default;
@@ -114,9 +92,6 @@ $mobile-navbar-height: 50px !default;
 // ========== Post ========== //
 // Margin bottom of post list.
 $post-list-margin-bottom: 20px !default;
-
-// Padding of the post.
-$post-padding: 1.5em 0 !default;
 
 // Border top of the post + post.
 $post-border: 1px solid $light-gray !default;
@@ -263,9 +238,6 @@ $code-background: $deputy-color !default;
 
 
 // ========== Pagination ========== //
-// Margin of the pagination.
-$pagination-margin: 2em 0 !default;
-
 // Font size of the pagination (Without post, post pagination see line 140).
 $pagination-font-size: 20px !default;
 

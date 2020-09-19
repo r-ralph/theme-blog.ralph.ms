@@ -3,7 +3,7 @@
 // ==============================
 
 .pagination {
-  margin: $pagination-margin;
+  padding: 2em 20px;
   @include clearfix;
 
   .prev,
@@ -20,7 +20,7 @@
 
     &:hover {
       color: $theme-color;
-      transform: translateX(-4px); 
+      transform: translateX(-4px);
     }
   }
 
@@ -29,7 +29,21 @@
 
     &:hover {
       color: $theme-color;
-      transform: translateX(4px); 
+      transform: translateX(4px);
     }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .pagination {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+@media screen and (min-width: 1310px) {
+  .pagination {
+    padding-left: 68px;
+    padding-right: 68px;
   }
 }

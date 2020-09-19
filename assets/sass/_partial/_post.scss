@@ -8,7 +8,7 @@
 }
 
 .post {
-  padding: $post-padding;
+  padding: 45px 20px;
 
   & + .post {
     border-top: $post-border;
@@ -20,4 +20,18 @@
   @import '_post/copyright';
   @import '_post/footer';
   @import '_post/outdated';
+}
+
+@media screen and (min-width: 992px) {
+  .post {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+@media screen and (min-width: 1310px) {
+  .post {
+    padding-left: 68px;
+    padding-right: 68px;
+  }
 }

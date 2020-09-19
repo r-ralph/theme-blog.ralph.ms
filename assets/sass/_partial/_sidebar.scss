@@ -1,0 +1,45 @@
+#sidebar {
+  display: none;
+  width: 366px;
+}
+
+#sidebar-inner {
+  padding: 20px 0;
+  border: 1px solid #ddd;
+  background: $white;
+  min-height: 1000px;
+}
+
+.sidebar-item {
+  margin: 0 6px;
+  padding: 20px 7px;
+
+  h3 {
+    margin: 4px 0 20px;
+    padding: 4px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #sidebar {
+    width: 366px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #sidebar {
+    display: block;
+    width: 366px;
+  }
+}
+
+@media screen and (min-width: 1310px) {
+  #sidebar {
+    width: 412px;
+
+    .sidebar-item {
+      margin: 0 18px;
+      padding: 20px 18px;
+    }
+  }
+}
