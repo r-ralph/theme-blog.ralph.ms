@@ -17,10 +17,7 @@ body {
   scroll-behavior: smooth;
   border-top: 3px solid $theme-color;
   @if ($global-background-image-path != "") {
-    background: $white url($global-background-image-path);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+    background: url($global-background-image-path) no-repeat fixed center center;
     @media screen and (min-width: $global-background-image-width) {
       background-size: cover;
     }
