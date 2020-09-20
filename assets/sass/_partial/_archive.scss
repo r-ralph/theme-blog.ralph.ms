@@ -3,8 +3,10 @@
 // =============================
 
 .archive {
-  margin: $archive-margin;
-  max-width: $archive-max-width;
+  margin-bottom: 25px;
+  border: 1px solid #ddd;
+  background: $white;
+  padding: 45px 20px;
 
   .archive-title {
 
@@ -46,13 +48,13 @@
     }
 
     .archive-post-title {
-      
+
       .archive-post-link {
         color: $theme-color;
       }
     }
 
-    &::first-child {
+    &:first-child {
       margin-top: 10px;
     }
 
@@ -72,27 +74,16 @@
   }
 }
 
-@include max-screen() {
+@media screen and (min-width: 992px) {
   .archive {
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
 
-    .archive-title .archive-name {
-      font-size: $archive-name-font-size - 4px;
-    }
-
-    .collection-title .archive-year {
-      margin: 10px 0;
-      font-size: $collection-title-font-size - 4px;
-    }
-
-    .archive-post {
-      padding: $archive-post-mobile-padding;
-
-      .archive-post-time {
-        font-size: $archive-post-mobile-time-font-size;
-        display: block;
-      }
-    }
+@media screen and (min-width: 1310px) {
+  .archive {
+    padding-left: 68px;
+    padding-right: 68px;
   }
 }
