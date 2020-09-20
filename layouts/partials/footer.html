@@ -2,31 +2,46 @@
   {{- range $name, $path := .Site.Params.social }}
     {{- if $path }}
       {{- $realName := slicestr $name 2 }}
-      <a href="{{ $path | safeURL }}" class="iconfont icon-{{ $realName }}" title="{{ $realName }}"></a>
+      <a href="{{ $path | safeURL }}" type="application/rss+xml" class="icon" title="{{ $realName }}" target="_blank"
+         rel="noopener noreferrer">
+        {{ with $partialName := $realName | printf "icon/%s.svg" | printf }}
+          {{ partial $partialName }}
+        {{ end }}
+      </a>
     {{- end }}
   {{- end }}
   {{ if .Site.LanguagePrefix -}}
-    <a href="{{ .Site.LanguagePrefix | absURL }}/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+    <a href="{{ .Site.LanguagePrefix | absURL }}/index.xml" type="application/rss+xml" class="icon" title="rss"
+       target="_blank" rel="noopener noreferrer">
+      {{ partial "icon/rss.svg" }}
+    </a>
   {{- else -}}
-    <a href="{{ .Site.RSSLink }}" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+    <a href="{{ .Site.RSSLink }}" type="application/rss+xml" class="icon" title="rss" target="_blank"
+       rel="noopener noreferrer">
+      {{ partial "icon/rss.svg" }}
+    </a>
   {{- end }}
 </div>
 
 <div class="copyright">
   <span class="power-by">
-    {{ (printf (T "powered") `<a class="hexo-link" href="https://gohugo.io">Hugo</a>`) | safeHTML }}
+    {{ (printf (T "powered") `<a class="link-ternary" href="https://gohugo.io">Hugo</a>`) | safeHTML }}
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     {{ T "theme" }} - based on
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+    <a class="link-ternary" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span>
+    Icons from <a class="link-ternary" href="https://fontawesome.com/license">FontAwesome</a>
   </span>
 
   <span class="copyright-year">
     {{- $current := now.Format "2006" }}
     &copy; 
     {{ if ne .Site.Params.since $current -}}
-      {{ .Site.Params.since }} - 
+      {{ .Site.Params.since }} -
     {{ end }}
     {{- $current }}
     <span class="heart">
