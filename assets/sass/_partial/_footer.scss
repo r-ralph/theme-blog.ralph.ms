@@ -4,6 +4,7 @@
 
 .footer {
   margin-top: $footer-margin-top;
+  padding: 20px 0;
   background-color: $white;
 
   @import "_footer/social";
