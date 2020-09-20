@@ -3,7 +3,10 @@
 // =============================
 
 .terms {
-  margin: 2em 0 3em;
+  margin-bottom: 25px;
+  border: 1px solid #ddd;
+  background: $white;
+  padding: 45px 20px;
   text-align: center;
 
   .terms-title {
@@ -41,5 +44,19 @@
         transform: scale(1.1);
       }
     }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .terms {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+@media screen and (min-width: 1310px) {
+  .terms {
+    padding-left: 68px;
+    padding-right: 68px;
   }
 }
