@@ -1,4 +1,11 @@
 <div id="header-inner">
+  <input id="nav-input" type="checkbox" class="nav-hidden">
+  <label id="nav-icon" for="nav-input">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <label id="nav-cover" class="nav-hidden" for="nav-input"></label>
   <div class="logo-wrapper">
     <a href="{{ "/" | relLangURL }}" class="logo">
       {{- if .Site.Params.logoTitle -}}
@@ -8,8 +15,7 @@
       {{- end -}}
     </a>
   </div>
-
-  <nav class="site-navbar">
+  <nav id="site-navbar">
     <ul id="menu" class="menu">
       {{ range .Site.Menus.main -}}
         <li class="menu-item">
@@ -17,5 +23,5 @@
         </li>
       {{- end }}
     </ul>
-  </nav>
+  </div>
 </div>

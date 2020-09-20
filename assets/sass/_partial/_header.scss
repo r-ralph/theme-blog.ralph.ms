@@ -4,7 +4,7 @@
 
 .header {
   @include clearfix;
-  padding: 20px 0;
+  padding: 0;
   background-color: $white;
 
   @import '_header/logo';
@@ -12,12 +12,84 @@
 }
 
 #header-inner {
+  display: flex;
+  position: relative;
   margin: auto;
 }
 
+.nav-hidden {
+  display: none;
+}
+
+#nav-icon {
+  color: $theme-color;
+  height: $mobile-navbar-height;
+  width: $mobile-navbar-height;
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+
+  span {
+    position: absolute;
+    left: ($mobile-navbar-height - 20px) / 2;
+    top: ($mobile-navbar-height - 2px) / 2;
+    width: 20px;
+    height: 2px;
+    background-color: $theme-color;
+
+    &:before {
+      bottom: -8px;
+    }
+
+    &:after {
+      bottom: -16px;
+    }
+
+    &:nth-child(1) {
+      transform: translateY(6px) rotate(0deg);
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-6px) rotate(0deg);
+    }
+  }
+}
+
+#nav-cover {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+#nav-input:checked {
+  ~ #nav-cover {
+    display: block;
+    opacity: .5;
+  }
+
+  ~ #site-navbar {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    box-shadow: 6px 0 25px rgba(0, 0, 0, .15);
+  }
+}
+
 @media screen and (min-width: 768px) {
+  .header {
+    padding: 20px 0;
+  }
   #header-inner {
     max-width: 720px;
+  }
+  #nav-icon {
+    display: none;
   }
 }
 

@@ -1,5 +1,4 @@
 <!-- core -->
-{{ .Site.Params.publicCDN.slideout | safeHTML }}
 {{ if .Site.Params.features.spotlight }}{{ .Site.Params.publicCDN.spotlight | safeHTML }}{{ end }}
 
 {{ $even := resources.Get "js/even.js" }}

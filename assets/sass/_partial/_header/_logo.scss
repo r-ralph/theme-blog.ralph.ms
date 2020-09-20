@@ -3,16 +3,19 @@
 // =============================
 
 .logo-wrapper {
-  float: left;
-  margin: 0 10px;
-
   .logo {
-    font-size: $logo-font-size;
+    font-size: 22px;
+    line-height: $mobile-navbar-height;
   }
 }
 
-@include max-screen() {
+@media screen and (min-width: 768px) {
   .logo-wrapper {
-    display: none;
+    margin: 0 auto 0 10px;
+
+    .logo {
+      font-size: $logo-font-size;
+      line-height: unset;
+    }
   }
 }

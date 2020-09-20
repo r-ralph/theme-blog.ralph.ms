@@ -17,7 +17,5 @@ $global-background-image-width: "{{ if .Site.Params.backgroundImage }}{{ .Site.P
 @import "_partial/footer";
 @import "_partial/archive";
 @import "_partial/terms";
-@import "_partial/slideout";
-@import "_partial/mobile";
 @import "_partial/back-to-top";
 @import "_partial/404";
