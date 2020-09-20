@@ -3,6 +3,25 @@
     <div id="sidebar-inner">
       <div class="sidebar-item">
         <h3>Recent Posts</h3>
+        <ul>
+          {{ range first 6 (where site.RegularPages "Section" "in" "post") }}
+            {{if eq .Type "post" }}
+              <li>
+                <a class="link_second" href="{{ .RelPermalink }}">{{ .Title }}</a>&nbsp;{{ .Date.Format "02 Jan, 2006" }}
+              </li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+      <div class="sidebar-item">
+        <h3>Archives</h3>
+        <ul>
+          {{ range $key, $value := .Site.Taxonomies.categories }}
+          	<li>
+          	  <a class="link_second" href="/categories/{{ $key | urlize  }}">{{ $key | humanize }}</a>&nbsp;({{ len $value }})
+          	</li>
+          {{ end }}
+        </ul>
       </div>
     </div>
   <aside>

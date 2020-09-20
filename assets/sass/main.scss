@@ -5,6 +5,7 @@ $global-background-image-width: "{{ if .Site.Params.backgroundImage }}{{ .Site.P
 
 @import "_variables";
 
+@import "_common/link";
 @import "_common/utils";
 @import "_common/animation";
 

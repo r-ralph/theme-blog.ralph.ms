@@ -1,0 +1,7 @@
+.link_second {
+  color: $theme-color;
+
+  &:hover {
+    border-bottom: 1px solid $theme-color;
+  }
+}
