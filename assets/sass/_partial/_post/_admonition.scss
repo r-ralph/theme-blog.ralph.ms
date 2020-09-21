@@ -186,19 +186,24 @@ details.admonition {
       display: none;
     }
 
-    &:after {
-      @extend %base-iconfont;
+    .admonition-expand {
       position: absolute;
-      top: .75rem;
+      height: 16px;
       right: .75rem;
+      top: .75rem;
+      display: inline-block;
       color: rgba(0, 0, 0, .26);
-      content: "\e908";
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 }
 
 details.admonition[open] {
-  > summary:after {
+  .admonition-expand {
     transform: rotate(180deg);
   }
 }

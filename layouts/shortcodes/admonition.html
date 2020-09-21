@@ -7,6 +7,7 @@
     <summary class="admonition-title">
       <span class="admonition-icon">{{- with .Get "icon" | printf "icon/%s.svg" -}}{{- partial . -}}{{- end -}}</span>
       {{- $title -}}
+      <span class="admonition-expand">{{- partial "icon/expand.svg" -}}</span>
     </summary>
   {{ end }}
   {{- .Inner -}}
@@ -35,6 +36,7 @@
     <summary class="admonition-title">
       <span class="admonition-icon">{{- with .Get 1 | printf "icon/%s.svg" -}}{{- partial . -}}{{- end -}}</span>
       {{- $title -}}
+      <span class="admonition-expand">{{- partial "icon/expand.svg" -}}</span>
     </summary>
   {{ end }}
   {{- .Inner -}}
