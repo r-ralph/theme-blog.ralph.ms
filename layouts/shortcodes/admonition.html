@@ -2,34 +2,54 @@
 
   {{ if eq (.Get "details") "true" -}}
 
-<details class="admonition {{ .Get "type" }}">
-  {{- with .Get "title" }}<summary class="admonition-title">{{ . }}</summary>{{ end }}
-  {{ .Inner }}
+<details class="admonition admonition-color-{{ .Get "color" }}">
+  {{- if $title := .Get "title" }}
+    <summary class="admonition-title">
+      <span class="admonition-icon">{{- with .Get "icon" | printf "icon/%s.svg" -}}{{- partial . -}}{{- end -}}</span>
+      {{- $title -}}
+    </summary>
+  {{ end }}
+  {{- .Inner -}}
 </details>
 
   {{- else -}}
 
-<div class="admonition {{ .Get "type" }}">
-  {{- with .Get "title" }}<p class="admonition-title">{{ . }}</p>{{ end }}
-  {{ .Inner }}
+<div class="admonition admonition-color-{{ .Get "color" }}">
+  {{- if $title := .Get "title" }}
+    <p class="admonition-title">
+      <span class="admonition-icon">{{- with .Get "icon" | printf "icon/%s.svg" -}}{{- partial . -}}{{- end -}}</span>
+      {{- $title -}}
+    </p>
+  {{ end }}
+  {{- .Inner -}}
 </div>
 
   {{- end }}
 
 {{- else -}}
 
-  {{ if eq (.Get 2) "true" -}}
+  {{ if eq (.Get 3) "true" -}}
 
-<details class="admonition {{ .Get 0 }}">
-  {{- with .Get 1 }}<summary class="admonition-title">{{ . }}</summary>{{ end }}
-  {{ .Inner }}
+<details class="admonition admonition-color-{{ .Get 0 }}">
+  {{- if $title := .Get 2 }}
+    <summary class="admonition-title">
+      <span class="admonition-icon">{{- with .Get 1 | printf "icon/%s.svg" -}}{{- partial . -}}{{- end -}}</span>
+      {{- $title -}}
+    </summary>
+  {{ end }}
+  {{- .Inner -}}
 </details>
 
   {{- else -}}
 
-<div class="admonition {{ .Get 0 }}">
-  {{- with .Get 1 }}<p class="admonition-title">{{ . }}</p>{{ end }}
-  {{ .Inner }}
+<div class="admonition admonition-color-{{ .Get 0 }}">
+  {{- if $title := .Get 2 }}
+    <p class="admonition-title">
+      <span class="admonition-icon">{{- with .Get 1 | printf "icon/%s.svg" -}}{{- partial . -}}{{- end -}}</span>
+      {{- $title -}}
+    </p>
+  {{ end }}
+  {{- .Inner -}}
 </div>
 
   {{- end }}
