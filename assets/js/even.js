@@ -19,12 +19,12 @@ Even.backToTop = function () {
             isAnimating = true;
             backToTop.style.opacity = originalOpacity;
             backToTop.style.transition = 'opacity 1000ms';
-            backToTop.style.display = 'block';
+            backToTop.style.display = 'grid';
             setTimeout(function () {
                 backToTop.style.opacity = targetOpacity;
             }, 1);
             setTimeout(function () {
-                backToTop.style.display = isFadeIn ? 'block' : 'none';
+                backToTop.style.display = isFadeIn ? 'grid' : 'none';
                 backToTop.style.transition = '';
                 isAnimating = false;
                 if (visibleBackToTopNow !== isFadeIn) {

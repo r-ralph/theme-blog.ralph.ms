@@ -44,7 +44,7 @@
       <nav class="post-nav">
         {{ with .NextInSection -}}
           <a class="prev" href="{{ .RelPermalink }}">
-            <i class="iconfont icon-left"></i>
+            {{ partial "icon/arrow-left.svg" }}
             <span class="prev-text nav-default">{{ .Title }}</span>
             <span class="prev-text nav-mobile">{{ T "prevPost" }}</span>
           </a>
@@ -53,7 +53,7 @@
           <a class="next" href="{{ .RelPermalink }}">
             <span class="next-text nav-default">{{ .Title }}</span>
             <span class="next-text nav-mobile">{{ T "nextPost" }}</span>
-            <i class="iconfont icon-right"></i>
+            {{ partial "icon/arrow-right.svg" }}
           </a>
         {{- end }}
       </nav>

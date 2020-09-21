@@ -10,14 +10,14 @@
   <nav class="pagination">
     {{ with $paginator.Prev -}}
       <a class="prev" href="{{ .URL }}">
-        <i class="iconfont icon-left"></i>
+        {{ partial "icon/arrow-left.svg" }}
         <span class="prev-text">{{ T "prevPage" }}</span>
       </a>
     {{- end }}
     {{ with $paginator.Next -}}
       <a class="next" href="{{ .URL }}">
         <span class="next-text">{{ T "nextPage" }}</span>
-        <i class="iconfont icon-right"></i>
+        {{ partial "icon/arrow-right.svg" }}
       </a>
     {{- end }}
   </nav>
