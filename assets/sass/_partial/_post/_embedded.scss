@@ -1,0 +1,9 @@
+.post-embedded-frame {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  iframe {
+    width: 100%;
+  }
+}
