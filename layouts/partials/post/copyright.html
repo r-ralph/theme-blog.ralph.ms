@@ -11,17 +11,5 @@
         {{ with .GitInfo }}<a href="{{ $.Site.Params.gitRepo }}/commit/{{ .Hash }}" title="{{ .Subject }}">({{ .AbbreviatedHash }})</a>{{ end }}
     </span>
   </p>
-  {{ if or .Params.contentCopyright (and .Site.Params.contentCopyright (ne .Params.contentCopyright false)) -}}
-  <p class="copyright-item">
-    <span class="item-title">{{ T "license" }}</span>
-    <span class="item-content">
-    {{- if .Params.contentCopyright -}}
-      {{ .Params.contentCopyright | safeHTML }}
-    {{- else -}}
-      {{ .Site.Params.contentCopyright | safeHTML }}
-    {{- end -}}
-    </span>
-  </p>
-  {{- end }}
 </div>
 {{- end }}
