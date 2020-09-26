@@ -1,0 +1,22 @@
+.row {
+  display: flex;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+
+  .column {
+    width: 0;
+    flex: 1;
+
+    &:first-child {
+      margin-right: 5px;
+    }
+
+    &:nth-child(n+2):nth-last-child(n+2) {
+      margin: 0 10px;
+    }
+
+    &:last-child {
+      margin-left: 5px;
+    }
+  }
+}
