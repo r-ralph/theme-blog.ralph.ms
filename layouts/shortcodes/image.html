@@ -1,15 +1,35 @@
+{{ $maxImageWidth := 710 }}
+{{ $image := $.Page.Resources.GetMatch (printf "images/%s" (.Get "src"))}}
+{{ $isAnimationImage := (strings.HasSuffix (.Get "src") "gif") }}
+
+{{ $thumbnailWidth := $maxImageWidth }}
+{{ if (.Get "width") }}
+  {{ $thumbnailWidthParam := int (.Get "width") }}
+  {{ if lt $thumbnailWidthParam $maxImageWidth }}
+    {{ $thumbnailWidth = $thumbnailWidthParam }}
+  {{ end }}
+  {{if gt $thumbnailWidthParam $image.Width }}
+    {{ $thumbnailWidth = $image.Width }}
+  {{ end }}
+{{ else if lt $image.Width $maxImageWidth }}
+  {{ $thumbnailWidth = $image.Width }}
+{{ end }}
+
+{{ $thumbnailImage := $image }}
+{{ if (and (not $isAnimationImage) (ne $image.Width $thumbnailWidth)) }}
+  {{ $thumbnailImage = $image.Resize (printf "%dx" $thumbnailWidth) }}
+{{ end }}
+
 <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
-  {{- if .Get "link" -}}
-  <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
-    {{- end }}
-    <img class="spotlight" src="{{ .Get "src" }}"
+  <a class="spotlight"
+     href="{{ $image.RelPermalink }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
+    <img src="{{ $thumbnailImage.RelPermalink }}"
             {{- if or (.Get "alt") (.Get "caption") }}
               alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify | plainify }}{{ end }}"
             {{- end -}}
-            {{- with .Get "width" }} width="{{ . }}"{{ end -}}
-            {{- with .Get "height" }} height="{{ . }}"{{ end -}}
-    /> <!-- Closing img tag -->
-    {{- if .Get "link" }}</a>{{ end -}}
+         width="{{ $thumbnailWidth }}px"
+    />
+  </a>
   {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
     <figcaption>
       {{ with (.Get "title") -}}
