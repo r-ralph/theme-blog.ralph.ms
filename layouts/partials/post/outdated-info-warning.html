@@ -1,4 +1,4 @@
-{{- if .Site.Params.features.outdatedInfoWarning }}
+{{- if .Params.enableOutdatedInfoWarning | default true }}
   <div class="post-outdated">
   </div>
   <script>
